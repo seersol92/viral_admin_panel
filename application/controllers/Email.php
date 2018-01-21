@@ -10,7 +10,7 @@ class Email extends BaseController {
     public function __construct()
     {
         parent::__construct();
-		$this->load->model('Email_model');
+		$this->load->model('email_model');
 		$this->isLoggedIn();   
     }
 	
