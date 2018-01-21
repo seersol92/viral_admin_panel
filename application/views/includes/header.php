@@ -108,18 +108,10 @@
             {
             ?>
             <li class="treeview">
-              <a href="#" >
+              <a href="<?php echo base_url(); ?>email-management" >
                 <i class="fa fa-thumb-tack"></i>
                 <span>Email Management</span>
               </a>
-              <ul class="sub-menu">
-                <li>
-                  <a href="#" >
-                  <i class="fa fa-thumb-tack"></i>
-                  <span>Email Management</span>
-                </a>
-                </li>
-              </ul>
             </li>
             <?php
             }

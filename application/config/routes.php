@@ -69,6 +69,12 @@ $route['addNewUser'] = "user/addNewUser";
 $route['memberListing'] = 'member/memberListing';
 $route['memberListing/(:num)'] = "member/memberListing/$1";
 
+$route['memberListing'] = 'member/memberListing';
+$route['memberListing/(:num)'] = "member/memberListing/$1";
+
+$route['email-management'] = 'email/emailTemplates';
+
+
 $route['editOld'] = "user/editOld";
 $route['editOld/(:num)'] = "user/editOld/$1";
 $route['editUser'] = "user/editUser";

@@ -2,8 +2,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-users"></i> Viral Members
-        <small>Update Members Info, Send Email</small>
+        <i class="fa fa-users"></i> Email Template
+        <small>Add, Edit, Delete Email Templates</small>
       </h1>
     </section>
     <section class="content">
@@ -12,7 +12,7 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Members List </h3>
+                    <h3 class="box-title">Templates List</h3>
                     <div class="box-tools">
                         <form action="<?php echo base_url() ?>memberListing" method="POST" id="searchList">
                             <div class="input-group">
@@ -27,12 +27,9 @@
                 <div class="box-body table-responsive no-padding">
                   <table class="table table-hover">
                     <tr>
-                      <th>Id</th>
-                      <th>IBM</th>                      
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th>Referred By</th>                      
-                      <th>Registered On</th>
+                      <th>#</th>
+                      <th>Short Name</th>                                           
+                      <th>Added On</th>
                       <th class="text-center">Actions</th>
                     </tr>
                     <?php
