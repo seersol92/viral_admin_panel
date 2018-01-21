@@ -109,7 +109,7 @@
             ?>
             <li class="treeview">
               <a href="<?php echo base_url(); ?>email-management" >
-                <i class="fa fa-thumb-tack"></i>
+                <i class="fa fa-envelope"></i>
                 <span>Email Management</span>
               </a>
             </li>
