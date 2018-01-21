@@ -22,7 +22,7 @@
                 <div class="box-header">
                     <h3 class="box-title">Templates List</h3>
                     <div class="box-tools">
-                        <form action="<?php echo base_url() ?>memberListing" method="POST" id="searchList">
+                        <form action="<?php echo base_url() ?>email-management" method="POST" id="searchList">
                             <div class="input-group">
                               <input type="text" name="searchText" value="<?php //echo $searchText; ?>" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
                               <div class="input-group-btn">
@@ -36,26 +36,27 @@
                   <table class="table table-hover">
                     <tr>
                       <th>#</th>
-                      <th>Short Name</th>                                           
+                      <th>Template Name</th> 
+                      <th>Template Content</th>                                                                                                           
                       <th>Added On</th>
                       <th class="text-center">Actions</th>
                     </tr>
                     <?php
-                    if(!empty($userRecords))
+                    if(!empty($tempList))
                     {
-                        foreach($userRecords as $record)
+                        $count = 0;
+                        foreach($tempList as $list)
                         {
+                            $count++;
                     ?>
                     <tr>
-                      <td><?php echo $record->u_id ?></td>
-                      <td><?php echo $record->ibm; ?></td>                      
-                      <td><?php echo $record->first_name ?></td>
-                      <td><?php echo $record->user_email ?></td>
-                      <td><?php echo $record->refer_ibm ?></td>                      
-                      <td><?php echo $record->date_register ?></td>
+                      <td><?php echo $count; ?></td>
+                      <td><?php echo $list->template_name; ?></td>                      
+                      <td><?php echo $list->template_content ?></td>                      
+                      <td><?php echo $list->created_at ?></td>
                       <td class="text-center">
-                          <a class="btn btn-sm btn-primary" href="<?= base_url().'send-email/'.$record->u_id; ?>" title="Send Email"><i class="fa fa-envelope"></i></a> | 
-                          <a class="btn btn-sm btn-info" href="<?php echo base_url().'editOld/'.$record->u_id; ?>" title="Edit"><i class="fa fa-pencil"></i></a>
+                          <a class="btn btn-sm btn-info" href="<?php echo base_url().'editOld/'.$list->id; ?>" title="Edit"><i class="fa fa-pencil"></i></a> |
+                          <a class="btn btn-sm btn-danger" href="<?= base_url().'send-email/'.$list->id; ?>" title="Delete Template"><i class="fa fa-trash-o"></i></a>                            
                       </td>
                     </tr>
                     <?php
@@ -66,7 +67,7 @@
                   
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix">
-                    <?php //echo $this->pagination->create_links(); ?>
+                    <?php echo $this->pagination->create_links(); ?>
                 </div>
               </div><!-- /.box -->
             </div>
@@ -80,7 +81,7 @@
             e.preventDefault();            
             var link = jQuery(this).get(0).href;            
             var value = link.substring(link.lastIndexOf('/') + 1);
-            jQuery("#searchList").attr("action", baseURL + "memberListing/" + value);
+            jQuery("#searchList").attr("action", baseURL + "email-management/" + value);
             jQuery("#searchList").submit();
         });
     });
