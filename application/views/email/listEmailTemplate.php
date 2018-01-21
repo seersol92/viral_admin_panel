@@ -9,6 +9,14 @@
     <section class="content">
         <br>
         <div class="row">
+            <div class="col-xs-12 text-right">
+            <div class="form-group">
+                    <a class="btn btn-primary" href="<?php echo base_url(); ?>add-new-template"><i class="fa fa-plus"></i>
+                     Add New Template</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
