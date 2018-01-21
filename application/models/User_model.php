@@ -51,7 +51,60 @@ class User_model extends CI_Model
         $result = $query->result();        
         return $result;
     }
+
+     /**
+     * This function is used to get the member listing count
+     * @param string $searchText : This is optional search text
+     * @param number $page : This is pagination offset
+     * @param number $segment : This is pagination limit
+     * @return array $result : This is result
+     */
+
+    public function memberListing($searchText = '', $page, $segment)
+    {
+        $this->db->select('BaseTbl.u_id, BaseTbl.user_email, BaseTbl.ibm, BaseTbl.first_name, BaseTbl.last_name, BaseTbl.date_register, BaseTbl.refer_ibm');
+        $this->db->from('members as BaseTbl');
+        if(!empty($searchText)) {
+            $likeCriteria = "(BaseTbl.user_email  LIKE '%".$searchText."%'
+                            OR  BaseTbl.first_name  LIKE '%".$searchText."%'
+                            OR  BaseTbl.ibm  LIKE '%".$searchText."%'
+                            OR  BaseTbl.refer_ibm  LIKE '%".$searchText."%'                            
+                            OR  BaseTbl.last_name  LIKE '%".$searchText."%')";
+            $this->db->where($likeCriteria);
+        }
+        //$this->db->where('BaseTbl.isDeleted', 0);
+        $this->db->limit($page, $segment);
+        $query = $this->db->get();
+        
+        $result = $query->result();        
+        return $result;
+
+    } 
+
+    /**
+     * This function is used to get the user listing count
+     * @param string $searchText : This is optional search text
+     * @return number $count : This is row count
+     */
+    function memberListingCount($searchText = '')
+    {
+        $this->db->select('BaseTbl.u_id, BaseTbl.user_email, BaseTbl.ibm, BaseTbl.first_name, BaseTbl.last_name, BaseTbl.date_register, BaseTbl.refer_ibm');
+        $this->db->from('members as BaseTbl');
+        if(!empty($searchText)) {
+            $likeCriteria = "(BaseTbl.user_email  LIKE '%".$searchText."%'
+                            OR  BaseTbl.first_name  LIKE '%".$searchText."%'
+                            OR  BaseTbl.ibm  LIKE '%".$searchText."%'
+                            OR  BaseTbl.refer_ibm  LIKE '%".$searchText."%'                            
+                            OR  BaseTbl.last_name  LIKE '%".$searchText."%')";
+            $this->db->where($likeCriteria);
+        }
+        $query = $this->db->get();
+        
+        return $query->num_rows();
+    }
     
+
+
     /**
      * This function is used to get the user roles information
      * @return array $result : This is result of the query

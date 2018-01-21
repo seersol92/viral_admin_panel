@@ -59,11 +59,16 @@ $route['404_override'] = 'error';
 $route['loginMe'] = 'Login/loginMe';
 $route['dashboard'] = 'user';
 $route['logout'] = 'user/logout';
+
 $route['userListing'] = 'user/userListing';
 $route['userListing/(:num)'] = "user/userListing/$1";
 $route['addNew'] = "user/addNew";
 
 $route['addNewUser'] = "user/addNewUser";
+
+$route['memberListing'] = 'member/memberListing';
+$route['memberListing/(:num)'] = "member/memberListing/$1";
+
 $route['editOld'] = "user/editOld";
 $route['editOld/(:num)'] = "user/editOld/$1";
 $route['editUser'] = "user/editUser";
