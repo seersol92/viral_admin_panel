@@ -65,11 +65,9 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="email">Template Content</label>
-
-                                        <input type="text" class="form-control required email" id="email" value="<?php echo set_value('email'); ?>" name="email" maxlength="128">
+                                        <textarea name="editor1" id="editor1" rows="10" cols="80"></textarea>
                                     </div>
                                 </div>
-                            </div>
                         </div><!-- /.box-body -->
     
                         <div class="box-footer pull-right">
@@ -85,3 +83,17 @@
     
 </div>
 <script src="<?php echo base_url(); ?>assets/js/addUser.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>assets/js/ckeditor/ckeditor.js" type="text/javascript"></script>
+<script>
+
+CKEDITOR.editorConfig = function (config) {
+    config.language = 'es';
+    config.uiColor = '#F7B42C';
+    config.height = 300;
+    config.toolbarCanCollapse = true;
+
+};
+CKEDITOR.replace('editor1');
+
+</script>
+
