@@ -3,7 +3,7 @@
     <section class="content-header">
       <h1>
         <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
-        <small>Control panel</small>
+        <small>Back Office</small>
       </h1>
     </section>
     
@@ -40,7 +40,7 @@
               <div class="small-box bg-yellow">
                 <div class="inner">
                   <h3>44</h3>
-                  <p>New User</p>
+                  <p>Total Members</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-person-add"></i>
@@ -53,7 +53,7 @@
               <div class="small-box bg-red">
                 <div class="inner">
                   <h3>65</h3>
-                  <p>Reopened Issue</p>
+                  <p>Open Ticket/Issue </p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-pie-graph"></i>

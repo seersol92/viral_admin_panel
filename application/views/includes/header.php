@@ -41,9 +41,9 @@
         <!-- Logo -->
         <a href="<?php echo base_url(); ?>" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>CI</b>AS</span>
+          <span class="logo-mini"><b>V</b>M</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>CodeInsect</b>AS</span>
+          <span class="logo-lg"><b>Viral </b>Marketer</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -103,18 +103,6 @@
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span></i>
               </a>
             </li>
-            <li class="treeview">
-              <a href="#" >
-                <i class="fa fa-plane"></i>
-                <span>New Task</span>
-              </a>
-            </li>
-            <li class="treeview">
-              <a href="#" >
-                <i class="fa fa-ticket"></i>
-                <span>My Tasks</span>
-              </a>
-            </li>
             <?php
             if($role == ROLE_ADMIN || $role == ROLE_MANAGER)
             {
@@ -122,13 +110,7 @@
             <li class="treeview">
               <a href="#" >
                 <i class="fa fa-thumb-tack"></i>
-                <span>Task Status</span>
-              </a>
-            </li>
-            <li class="treeview">
-              <a href="#" >
-                <i class="fa fa-upload"></i>
-                <span>Task Uploads</span>
+                <span>Email Management</span>
               </a>
             </li>
             <?php
@@ -136,10 +118,16 @@
             if($role == ROLE_ADMIN)
             {
             ?>
+             <li class="treeview">
+              <a href="<?php echo base_url(); ?>memberListing">
+                <i class="fa fa-users"></i>
+                <span>Viral Members</span>
+              </a>
+            </li>
             <li class="treeview">
               <a href="<?php echo base_url(); ?>userListing">
                 <i class="fa fa-users"></i>
-                <span>Users</span>
+                <span>Admin Users</span>
               </a>
             </li>
             <li class="treeview">

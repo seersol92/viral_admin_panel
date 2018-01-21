@@ -2,9 +2,9 @@
 
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <b>CodeInsect</b> Admin System | Version 1.0
+          <b>Viral Marketer</b> Back Office
         </div>
-        <strong>Copyright &copy; 2014-2015 <a href="<?php echo base_url(); ?>">CodeInsect</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2017-<?= date('Y')?> <a href="<?php echo base_url(); ?>">Viral Marketer</a>.</strong> All rights reserved.
     </footer>
     
     <!-- jQuery UI 1.11.2 -->
