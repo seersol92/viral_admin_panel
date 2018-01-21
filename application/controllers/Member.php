@@ -39,7 +39,7 @@ class Member extends BaseController
             
             $count = $this->user_model->memberListingCount($searchText);
 
-			$returns = $this->paginationCompress ( "memberListing/", $count, 5 );
+			$returns = $this->paginationCompress ( "memberListing/", $count, 10 );
             
             $data['userRecords'] = $this->user_model->memberListing($searchText, $returns["page"], $returns["segment"]);
             
