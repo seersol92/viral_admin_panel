@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 $route['default_controller'] = "Login";
-$route['404_override'] = 'error';
+$route['404_override'] = 'user/pageNotFound';
 
 
 /*********** USER DEFINED ROUTES *******************/
@@ -75,6 +75,9 @@ $route['memberListing/(:num)'] = "member/memberListing/$1";
 $route['email-management'] = 'email/emailTemplates';
 $route['add-new-template'] = 'email/addTemplate';
 $route['add-template'] = 'email/addNewTemplate';
+$route['select-template/(:num)'] = 'member/selectEmailTemplate/$1';
+$route['compose-email'] = 'member/composeEmail';
+
 
 $route['editOld'] = "user/editOld";
 $route['editOld/(:num)'] = "user/editOld/$1";
@@ -95,5 +98,6 @@ $route['resetPasswordConfirmUser/(:any)'] = "login/resetPasswordConfirmUser/$1";
 $route['resetPasswordConfirmUser/(:any)/(:any)'] = "login/resetPasswordConfirmUser/$1/$2";
 $route['createPasswordUser'] = "login/createPasswordUser";
 
+$route['pageNotFound'] = 'user/pageNotFound';
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

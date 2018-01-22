@@ -29,6 +29,18 @@ class BaseController extends CI_Controller {
 	}
 	
 	/**
+	 * This function used to print array and oject 
+	 */
+	public function dd( $array = array())
+	{
+
+		echo '<pre>';
+		print_r($array);
+		echo '</pre>';
+		die();
+	}
+
+	/**
 	 * This function used to check the user is logged in or not
 	 */
 	function isLoggedIn() {

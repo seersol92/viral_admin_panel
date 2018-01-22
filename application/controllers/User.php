@@ -322,6 +322,7 @@ class User extends BaseController
      */
     function pageNotFound()
     {
+        $this->output->set_status_header('404');
         $this->global['pageTitle'] = 'Viral Marketer : 404 - Page Not Found';
         
         $this->loadViews("404", $this->global, NULL, NULL);

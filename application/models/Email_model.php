@@ -30,7 +30,7 @@ class Email_model extends CI_Model
     {
         $this->db->select('BaseTbl.id, BaseTbl.template_name, BaseTbl.template_content, BaseTbl.created_at');
         $this->db->from('tbl_email_templates as BaseTbl');
-        $this->db->order_by('BaseTbl.id', 'DESC');
+        $this->db->order_by('BaseTbl.id ', 'DESC');
         if(!empty($searchText)) {
             $likeCriteria = "(BaseTbl.template_name  LIKE '%".$searchText."%'
                             OR  BaseTbl.template_content  LIKE '%".$searchText."%'
@@ -45,6 +45,7 @@ class Email_model extends CI_Model
         return $result;
 
     } 
+    
 }
 
 ?>

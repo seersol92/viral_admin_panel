@@ -49,7 +49,7 @@
                       <td><?php echo $record->refer_ibm ?></td>                      
                       <td><?php echo $record->date_register ?></td>
                       <td class="text-center">
-                          <a class="btn btn-sm btn-primary" href="<?= base_url().'send-email/'.$record->u_id; ?>" title="Send Email"><i class="fa fa-envelope"></i></a> | 
+                          <a class="btn btn-sm btn-primary" href="<?= base_url().'select-template/'.$record->ibm; ?>" title="Send Email"><i class="fa fa-envelope"></i></a> | 
                           <a class="btn btn-sm btn-info" href="<?php echo base_url().'editOld/'.$record->u_id; ?>" title="Edit"><i class="fa fa-pencil"></i></a>
                       </td>
                     </tr>

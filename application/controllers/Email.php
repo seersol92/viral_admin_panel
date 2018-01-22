@@ -92,6 +92,6 @@ class Email extends BaseController {
                 redirect('add-new-template');
             }
         }
-    }
-
+	}
+	
 }

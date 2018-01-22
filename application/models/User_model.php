@@ -103,7 +103,20 @@ class User_model extends CI_Model
         return $query->num_rows();
     }
     
-
+    /**
+     * This function used to get member information by ibm
+     * @param number $memberIbm : This is member ibm
+     * @return array $result : This is user information
+     */
+    function getMemberInfo($memberIbm)
+    {
+        $this->db->select('first_name, user_email, ibm');
+        $this->db->from('members');
+        $this->db->where('ibm', $memberIbm);
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
 
     /**
      * This function is used to get the user roles information
@@ -315,6 +328,8 @@ class User_model extends CI_Model
         
         return $query->row();
     }
+
+    
 
 }
 
