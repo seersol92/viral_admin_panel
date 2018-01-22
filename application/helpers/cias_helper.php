@@ -140,6 +140,29 @@ if(!function_exists('resetPasswordEmail'))
     }
 }
 
+if(!function_exists('sendEmail'))
+{
+    function sendEmail($detail)
+    {
+        $data["data"] = $detail;
+        // pre($detail);
+        // die;
+        
+        $CI = setProtocol();        
+        
+        $CI->email->from(EMAIL_FROM, FROM_NAME);
+        $CI->email->subject($detail["subject"]);
+        $CI->load->view('email/resetPassword', $data, TRUE);
+        $CI->email->message($CI->load->view('email/resetPassword', $data, TRUE));
+        $CI->email->to($detail["email"]);
+        $status = $CI->email->send();
+        
+        return $status;
+    }
+}
+
+
+
 if(!function_exists('setFlashData'))
 {
     function setFlashData($status, $flashMsg)

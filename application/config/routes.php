@@ -77,6 +77,7 @@ $route['add-new-template'] = 'email/addTemplate';
 $route['add-template'] = 'email/addNewTemplate';
 $route['select-template/(:any)'] = 'member/selectEmailTemplate/$1';
 $route['compose-email'] = 'member/composeEmail';
+$route['send-email'] = 'member/sendEmail';
 
 
 $route['editOld'] = "user/editOld";

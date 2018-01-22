@@ -52,13 +52,10 @@
 															<table cellpadding="0" cellspacing="0" style="width:100%;margin:0;padding:0">
 																<tbody>
 																	<tr>
-																		<td align="center">
+																		<td align="left">
 																			<div style="width:100%">
-																				<b>Hi, <?php echo $data["name"]; ?></b>! <span class="il"><?php echo $data["message"]; ?></span>
+                                                                                <span class="il"><?php echo $data["message"]; ?></span>
 																				<div style="min-height:20px"></div>
-																				<div style="width:100%">
-																					<a style="display:inline-block;font-size:15px;padding:10px 18px;vertical-align:middle;color:#ffffff;background:#34a8c4;border-top:solid 1px #2c8ea6;border-right:solid 1px #2c8ea6;border-bottom:solid 1px #2c8ea6;border-left:solid 1px #2c8ea6;border-radius:3px;text-decoration:none;white-space:normal;font-weight:bold;line-height:18px" href="<?php echo $data['reset_link']; ?>" target="_blank"> <span class="il"> Reset Password Link </span></a>
-																				</div>
 																				<div style="min-height:28px"></div>
 																			</div>
 																		</td>

@@ -75,9 +75,9 @@
                                 <div class="col-md-12">                                
                                     <div class="form-group">
                                        <label for="temp_no">Select Email Template</label>
-                                       <select name="" id="" class="form-control">
+                                       <select name="temp_no" id="" class="form-control" required>
                                        <?php if(!empty($tempList)) { ?>    
-                                        <option hidden selected>Select Templates</option>
+                                        <option hidden selected value="">Select Templates</option>
                                         <?php foreach($tempList AS $temp)
                                         {
                                             echo '<option value="'.$temp->id.'">'.$temp->template_name.'</option>';  

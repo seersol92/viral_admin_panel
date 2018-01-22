@@ -72,11 +72,6 @@ class Member extends BaseController
      /**
      * This function is used to Send email to members via IBM
      */
-    public function sendEmailMembers($memberIbm = NULL)
-    {
-
-    }
-
     public function selectEmailTemplate($memberIbm = NULL)
 	{
 		if($this->isAdmin() == TRUE)
@@ -95,14 +90,62 @@ class Member extends BaseController
                 $this->global['pageTitle'] = 'Viral Marketer : Select Email Template';
                 $this->loadViews("email/selectEmailTemplate", $this->global, $data, NULL);
 
+            } else 
+            {
+                redirect('pageNotFound');
             }
-           
-		}
+        }
+
     }
+     /**
+     * This function is used to compose email
+     */
     
     public function composeEmail()
     {
-        $this->dd($_POST);
+        if($this->isAdmin() == TRUE)
+        {
+            $this->loadThis();
+        }
+        else if(!empty($_POST['mem_ibm']) && !empty($_POST['temp_no']) &&  filter_var($_POST['temp_no'], FILTER_VALIDATE_INT))
+        {
+            $this->load->model(array('user_model', 'email_model'));
+            $result = $this->user_model->getMemberInfo($_POST['mem_ibm']);
+            if(!empty($result))
+            {
+                $data['memberInfo'] = $result;
+                $data['tempList'] = $this->email_model->getTempInfo($_POST['temp_no']);
+                $this->global['pageTitle'] = 'Viral Marketer : Compose Email';
+                $this->loadViews("email/composeEmail", $this->global, $data, NULL);
+
+            }
+           
+        } else 
+        {
+            redirect('pageNotFound');
+        }
+    }
+
+     /**
+     * This function is used to Send email to members
+     */
+
+    public function sendEmail()
+    {
+        if($this->isAdmin() == TRUE)
+        {
+            $this->loadThis();
+        }
+        else 
+        {
+            $data1['email'] = $_POST['mem_email'];
+            $data1["name"] = $_POST['mem_name'];
+            $data1["message"] = $_POST['temp_content'];
+            $data1['title'] = 'Reset Your Password';
+            $data["data"]   = $data1;
+            $this->load->view('email/emailTemplate', $data);
+        }
+
     }
 }
 

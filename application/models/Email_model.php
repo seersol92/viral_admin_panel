@@ -45,6 +45,21 @@ class Email_model extends CI_Model
         return $result;
 
     } 
+
+    /**
+     * This function used to get template information by id
+     * @param number $templateId : This is templateId
+     * @return array $result : This is template information
+     */
+    function getTempInfo($templateId)
+    {
+        $this->db->select('template_name, template_content');
+        $this->db->from('tbl_email_templates');
+        $this->db->where('id', $templateId);
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
     
 }
 

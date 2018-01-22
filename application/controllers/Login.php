@@ -157,8 +157,12 @@ class Login extends CI_Controller
                         $data1["name"] = $userInfo[0]->name;
                         $data1["email"] = $userInfo[0]->email;
                         $data1["message"] = "Reset Your Password";
+                        $data1['title'] = 'Reset Your Password';
                     }
 
+                    $data["data"]=$data1;
+                    $this->load->view('email/resetPassword', $data);
+                    die;
                     $sendStatus = resetPasswordEmail($data1);
 
                     if($sendStatus){
