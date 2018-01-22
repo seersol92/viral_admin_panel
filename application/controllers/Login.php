@@ -162,7 +162,6 @@ class Login extends CI_Controller
 
                     $data["data"]=$data1;
                     $this->load->view('email/resetPassword', $data);
-                    die;
                     $sendStatus = resetPasswordEmail($data1);
 
                     if($sendStatus){
