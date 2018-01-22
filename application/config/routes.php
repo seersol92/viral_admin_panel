@@ -75,7 +75,7 @@ $route['memberListing/(:num)'] = "member/memberListing/$1";
 $route['email-management'] = 'email/emailTemplates';
 $route['add-new-template'] = 'email/addTemplate';
 $route['add-template'] = 'email/addNewTemplate';
-$route['select-template/(:num)'] = 'member/selectEmailTemplate/$1';
+$route['select-template/(:any)'] = 'member/selectEmailTemplate/$1';
 $route['compose-email'] = 'member/composeEmail';
 
 
