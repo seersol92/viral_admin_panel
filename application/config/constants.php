@@ -95,13 +95,14 @@ define('SEGMENT',								2);
 
 /************************** EMAIL CONSTANTS *****************************/
 
-define('EMAIL_FROM',                            'Your from email');		// e.g. email@example.com
+define('EMAIL_FROM',                            'admin@seersol.com');		// e.g. email@example.com
 define('EMAIL_BCC',                            	'Your bcc email');		// e.g. email@example.com
-define('FROM_NAME',                             'CIAS Admin System');	// Your system name
-define('EMAIL_PASS',                            'Your email password');	// Your email password
+define('FROM_NAME',                             'Viral Marketing');	// Your system name
+define('EMAIL_PASS',                            'hadi9292@');	// Your email password
 define('PROTOCOL',                             	'smtp');				// mail, sendmail, smtp
-define('SMTP_HOST',                             'Your smtp host');		// your smtp host e.g. smtp.gmail.com
+define('SMTP_HOST',                             'smtpout.secureserver.net');		
+// your smtp host e.g. smtp.gmail.com
 define('SMTP_PORT',                             '25');					// your smtp port e.g. 25, 587
-define('SMTP_USER',                             'Your smtp user');		// your smtp user
-define('SMTP_PASS',                             'Your smtp password');	// your smtp password
+define('SMTP_USER',                             'admin@seersol.com');		// your smtp user
+define('SMTP_PASS',                             'hadi9292@');	// your smtp password
 define('MAIL_PATH',                             '/usr/sbin/sendmail');
