@@ -162,7 +162,6 @@ class Login extends CI_Controller
 
                     $data["data"]=$data1;
                     $sendStatus = resetPasswordEmail($data1);
-                    print_r($sendStatus);die;
                     if($sendStatus){
                         $status = "send";
                         setFlashData($status, "Reset password link sent successfully, please check mails.");
