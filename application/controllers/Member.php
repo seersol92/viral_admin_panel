@@ -146,10 +146,10 @@ class Member extends BaseController
             $data["data"]   = $data1;
             $sendStatus = sendEmail($data1);
             if($sendStatus){
-                $status = "send";
+                $status = "success";
                 setFlashData($status, "Email has been sent successfully.");
             } else {
-                $status = "notsend";
+                $status = "error";
                 setFlashData($status, "Email has been failed, try again.");
             }
             redirect('/memberListing');
