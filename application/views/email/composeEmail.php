@@ -73,7 +73,14 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="temp_content">Template Content</label>
+                                        <label for="temp_content">Email Subject (You can modfiy it)</label>
+                                        <textarea name="temp_name" id="editor1" rows="10" cols="80"><?php 
+                                        echo $tempList[0]->template_name;?></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="temp_content">Your Message</label>
                                         <textarea name="temp_content" id="editor1" rows="10" cols="80"><?php 
                                         echo $tempList[0]->template_content;?></textarea>
                                     </div>

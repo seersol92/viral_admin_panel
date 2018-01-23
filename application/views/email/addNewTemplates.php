@@ -60,7 +60,7 @@
                             <div class="row">
                                 <div class="col-md-12">                                
                                     <div class="form-group">
-                                        <label for="temp_name">Template Name</label>
+                                        <label for="temp_name">Template Subject</label>
                                         <input type="text" class="form-control required" value="<?php echo set_value('temp_name'); ?>" id="temp_name" name="temp_name" >
                                     </div>
                                 </div>

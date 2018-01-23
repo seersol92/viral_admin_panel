@@ -141,7 +141,8 @@ class Member extends BaseController
             $data1['email'] = $_POST['mem_email'];
             $data1["name"] = $_POST['mem_name'];
             $data1["message"] = $_POST['temp_content'];
-            $data1['title'] = 'Member notications';
+            $data1["title"] = $_POST['temp_name'];
+            $data1["subject"] = $_POST['temp_name'];            
             $data["data"]   = $data1;
             $sendStatus = sendEmail($data1);
             if($sendStatus){

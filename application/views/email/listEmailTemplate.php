@@ -36,7 +36,7 @@
                   <table class="table table-hover">
                     <tr>
                       <th>#</th>
-                      <th>Template Name</th> 
+                      <th>Template Subject</th> 
                       <th>Template Content</th>                                                                                                           
                       <th>Added On</th>
                       <th class="text-center">Actions</th>
