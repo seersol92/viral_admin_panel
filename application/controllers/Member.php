@@ -147,7 +147,7 @@ class Member extends BaseController
             $sendStatus = sendEmail($data1);
             if($sendStatus){
                 $status = "success";
-                setFlashData($status, "Email has been sent successfully.");
+                setFlashData($status, "Email has been sent to <b>".$_POST['mem_name']."</b> successfully.");
             } else {
                 $status = "error";
                 setFlashData($status, "Email has been failed, try again.");
