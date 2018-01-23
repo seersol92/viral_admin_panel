@@ -141,9 +141,17 @@ class Member extends BaseController
             $data1['email'] = $_POST['mem_email'];
             $data1["name"] = $_POST['mem_name'];
             $data1["message"] = $_POST['temp_content'];
-            $data1['title'] = 'Reset Your Password';
+            $data1['title'] = 'Member notications';
             $data["data"]   = $data1;
-            $this->load->view('email/emailTemplate', $data);
+            $sendStatus = sendEmail($data1);
+            if($sendStatus){
+                $status = "send";
+                setFlashData($status, "Email has been sent successfully.");
+            } else {
+                $status = "notsend";
+                setFlashData($status, "Email has been failed, try again.");
+            }
+            redirect('/memberListing');
         }
 
     }

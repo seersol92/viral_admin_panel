@@ -124,14 +124,9 @@ if(!function_exists('resetPasswordEmail'))
 {
     function resetPasswordEmail($detail)
     {
-        $data["data"] = $detail;
-        // pre($detail);
-        // die;
-        
-       // $CI = setProtocol();        
-       $CI = &get_instance();                  
-       $CI->load->library('email');
-         
+        $data["data"] = $detail;        
+        $CI = &get_instance();                  
+        $CI->load->library('email');   
         $CI->email->clear(TRUE);
         $CI->email->set_mailtype("html"); // Set the email type as 'html'
         $CI->email->from(EMAIL_FROM, FROM_NAME);
@@ -144,35 +139,18 @@ if(!function_exists('resetPasswordEmail'))
     }
 }
 
-function sendMail2($to, $subject, $message, $from)
-  {
-      
-    $CI = &get_instance();                  
-    $CI->load->library('email');
-	  
-	$CI->email->clear(TRUE);
-    $CI->email->set_mailtype("html"); // Set the email type as 'html'
-	$CI->email->from(FROM_NAME, EMAIL_FROM);
-	$CI->email->to($to); 
-	$CI->email->subject($subject);
-	$CI->email->message($message);	
-	$CI->email->send();
-	//echo $this->email->print_debugger();
-  }
-
-
 if(!function_exists('sendEmail'))
 {
     function sendEmail($detail)
     {
-        $data["data"] = $detail;
-        
-        $CI = setProtocol();        
-        
+        $data["data"] = $detail;        
+        $CI = &get_instance();                  
+        $CI->load->library('email');   
+        $CI->email->clear(TRUE);
+        $CI->email->set_mailtype("html"); // Set the email type as 'html'
         $CI->email->from(EMAIL_FROM, FROM_NAME);
         $CI->email->subject($detail["subject"]);
-        $CI->load->view('email/resetPassword', $data, TRUE);
-        $CI->email->message($CI->load->view('email/resetPassword', $data, TRUE));
+        $CI->email->message($CI->load->view('email/emailTemplate', $data, TRUE));
         $CI->email->to($detail["email"]);
         $status = $CI->email->send();
         
