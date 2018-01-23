@@ -73,9 +73,9 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="temp_content">Email Subject (You can modfiy it)</label>
-                                        <textarea name="temp_name" id="editor1" rows="10" cols="80"><?php 
-                                        echo $tempList[0]->template_name;?></textarea>
+                                    <label for="temp_name">Email Subject (You can modfiy it)</label>
+                                    <input type="text" name="temp_name" class="form-control required" 
+                                        value="<?php echo $tempList[0]->template_name; ?>" >
                                     </div>
                                 </div>
                                 <div class="col-md-12">
