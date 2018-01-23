@@ -100,7 +100,7 @@ define('EMAIL_BCC',                            	'Your bcc email');		// e.g. emai
 define('FROM_NAME',                             'Viral Marketing');	// Your system name
 define('EMAIL_PASS',                            'hadi9292@');	// Your email password
 define('PROTOCOL',                             	'smtp');				// mail, sendmail, smtp
-define('SMTP_HOST',                             'relay-hosting.secureserver.net');		
+define('SMTP_HOST',                             'localhost');		
 // your smtp host e.g. smtp.gmail.com
 define('SMTP_PORT',                             '25');					// your smtp port e.g. 25, 587
 define('SMTP_USER',                             'admin@seersol.com');		// your smtp user
