@@ -82,7 +82,7 @@
                                     <div class="form-group">
                                         <label for="temp_content">Your Message</label>
                                         <textarea name="temp_content" id="editor1" rows="10" cols="80"><?php 
-                                        echo $tempList[0]->template_content;?></textarea>
+                                        echo $show_content;?></textarea>
                                     </div>
                                 </div>
                                
