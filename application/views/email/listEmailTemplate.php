@@ -11,8 +11,15 @@
         <div class="row">
             <div class="col-xs-12 text-right">
             <div class="form-group">
+
                     <a class="btn btn-primary" href="<?php echo base_url(); ?>add-new-template"><i class="fa fa-plus"></i>
                      Add New Template</a>
+                     <select name="temp_type" id="temp_type" class="form-control pull-right" style="width: 180px;" onchange="this.form.submit();">
+                        <option value="" selected hidden>Filter By Email Type</option>
+                        <option value="1">Automated Emails</option>                                            
+                        <option value="2">Follow up Emails</option>
+                        <option value="3">Broadcast Emails</option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -24,17 +31,10 @@
                     <div class="box-tools">
                         <form action="<?php echo base_url() ?>email-management" method="POST" id="searchList">
                             <div class="input-group">
-                                <input type="text" name="searchText" value="<?php echo $searchText; ?>" 
-                                class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
-                                <div class="input-group-btn">
+                              <input type="text" name="searchText" value="<?php //echo $searchText; ?>" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
+                              <div class="input-group-btn">
                                 <button class="btn btn-sm btn-default searchList"><i class="fa fa-search"></i></button>
                               </div>
-                              <select name="temp_type" id="temp_type" class="form-control pull-right" style="width: 180px;" onchange="this.form.submit();">
-                                    <option value="" selected hidden>Filter By Email Type</option>
-                                    <option value="1">Automated Emails</option>                                            
-                                    <option value="2">Follow up Emails</option>
-                                    <option value="3">Broadcast Emails</option>
-                                </select>
                             </div>
                         </form>
                     </div>
