@@ -102,7 +102,6 @@ class Member extends BaseController
         //echo $subject;
         $identifiers = array('{#'=>'', '#}'=>'');
         $replace = (array) $replace[0]+$identifiers;
-        $this->dd($replace);
         return str_replace(array_keys($replace), array_values($replace), $subject);    
      } 
 
