@@ -45,6 +45,11 @@
                     <?php
                     if(!empty($tempList))
                     {
+                        $template_types = array(
+                                            1=> 'Automated Emails',
+                                            2=> 'Follow up Email',
+                                            3=> 'Broadcast Email'
+                                        );
                         $count = 0;
                         foreach($tempList as $list)
                         {
@@ -53,7 +58,7 @@
                     <tr>
                       <td><?php echo $count; ?></td>
                       <td><?php echo $list->template_name; ?></td> 
-                      <td><?php echo $list->template_type; ?></td>                                                                 
+                      <td><?php echo $template_types[$list->template_type]; ?></td>                                                                 
                       <td><?php echo $list->template_content ?></td>                      
                       <td><?php echo $list->created_at ?></td>
                       <td class="text-center">
