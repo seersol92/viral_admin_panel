@@ -23,7 +23,8 @@
                     <h3 class="box-title">Templates List</h3>
                     <div class="box-tools">
                         <form action="<?php echo base_url() ?>email-management" method="POST" id="searchList">
-                            <div class="input-group">
+                              <div class="input-group">
+                              <div class="input-group">
                               <select name="temp_type" id="temp_type" class="form-control" onchange="this.form.submit();">
                                     <option value="" selected hidden>Filter By Email Type</option>
                                     <option value="1">Automated Emails</option>                                            
@@ -31,7 +32,6 @@
                                     <option value="3">Broadcast Emails</option>
                                 </select>
                             </div>
-                              <div class="input-group">
                               <input type="text" name="searchText" value="<?php //echo $searchText; ?>" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
                               <div class="input-group-btn">
                                 <button class="btn btn-sm btn-default searchList"><i class="fa fa-search"></i></button>
