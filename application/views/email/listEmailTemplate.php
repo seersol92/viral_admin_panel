@@ -10,18 +10,20 @@
         <br>
         <div class="row">
             <div class="col-xs-12 text-right">
-                
-            <div class="form-group">
-                    <select name="temp_type" id="temp_type" class="form-control" style="width: 180px;" onchange="this.form.submit();">
+            <form class="form-inline" action="/action_page.php">
+                <div class="form-group">
+                <select name="temp_type" id="temp_type" class="form-control" style="width: 180px;" onchange="this.form.submit();">
                         <option value="" selected hidden>Filter By Email Type</option>
                         <option value="1">Automated Emails</option>                                            
                         <option value="2">Follow up Emails</option>
                         <option value="3">Broadcast Emails</option>
-                    </select>
-                    &nbsp;
-                    <a class="btn btn-primary" href="<?php echo base_url(); ?>add-new-template"><i class="fa fa-plus"></i>
+                </select>
+                </div>
+                <div class="form-group">
+                <a class="btn btn-primary" href="<?php echo base_url(); ?>add-new-template"><i class="fa fa-plus"></i>
                      Add New Template</a>
                 </div>
+            </form>
             </div>
         </div>
         <div class="row">
