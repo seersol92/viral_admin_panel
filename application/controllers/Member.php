@@ -100,7 +100,8 @@ class Member extends BaseController
 
     public function strReplaceAssoc(array $replace, $subject) { 
         //echo $subject;
-        $replace = (array) $replace[0];
+        $identifiers = array('{#'=>'', '#}'=>'');
+        $replace = (array) $replace[0]+$identifiers;
         $this->dd($replace);
         return str_replace(array_keys($replace), array_values($replace), $subject);    
      } 
@@ -122,9 +123,8 @@ class Member extends BaseController
             $result = $this->user_model->getMemberInfo($_POST['mem_ibm']);
             if(!empty($result))
             {
-                $identifiers = array('{#'=>'', '#}'=>'');
                 $this->load->helper('string');
-                $data['memberInfo'] = $result+$identifiers;
+                $data['memberInfo'] = $result;
                 $keys_list = array_keys($data['memberInfo']);
                 $data['tempList'] = $this->email_model->getTempInfo($_POST['temp_no']);
                 $data['show_content'] = $this->strReplaceAssoc($data['memberInfo'], $data['tempList'][0]->template_content); 
