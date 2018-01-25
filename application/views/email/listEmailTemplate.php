@@ -10,6 +10,20 @@
         <br>
         <div class="row">
             <div class="col-xs-12 text-right">
+            <form class="form-inline" action="/action_page.php">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" name="remember"> Remember me</label>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
             <div class="form-group">             
                      <a class="btn btn-primary" href="<?php echo base_url(); ?>add-new-template"><i class="fa fa-plus"></i>
                         Add New Template</a>
