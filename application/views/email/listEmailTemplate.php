@@ -10,7 +10,7 @@
         <br>
         <div class="row">
             <div class="col-xs-12 text-right">
-            <form class="form-inline" action="/action_page.php">
+            <form class="form-inline" action="<?php echo base_url() ?>email-management">
                 <div class="form-group">
                 <select name="temp_type" id="temp_type" class="form-control" style="width: 180px;" onchange="this.form.submit();">
                         <option value="" selected hidden>Filter By Email Type</option>
