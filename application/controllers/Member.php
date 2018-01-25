@@ -124,10 +124,10 @@ class Member extends BaseController
             {
                 $identifiers = array('{#'=>'', '#}'=>'');
                 $this->load->helper('string');
-                $data['memberInfo'] = $result;
+                $data['memberInfo'] = $result+$identifiers;
                 $keys_list = array_keys($data['memberInfo']);
                 $data['tempList'] = $this->email_model->getTempInfo($_POST['temp_no']);
-                $data['show_content'] = $this->strReplaceAssoc($data['memberInfo']+$identifiers, $data['tempList'][0]->template_content); 
+                $data['show_content'] = $this->strReplaceAssoc($data['memberInfo'], $data['tempList'][0]->template_content); 
                 $this->global['pageTitle'] = 'Viral Marketer : Compose Email';
                 $this->loadViews("email/composeEmail", $this->global, $data, NULL);
 
