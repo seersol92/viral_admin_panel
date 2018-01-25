@@ -81,7 +81,8 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="temp_content">Your Message</label>
-                                        <textarea name="temp_content" id="editor1" rows="10" cols="80"><?php 
+                                        <textarea name="temp_content" style="width: 100%;">
+                                            <?php 
                                         echo $show_content;?></textarea>
                                     </div>
                                 </div>
