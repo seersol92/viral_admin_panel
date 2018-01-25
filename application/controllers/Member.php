@@ -98,12 +98,16 @@ class Member extends BaseController
 
     }
 
-    public function strReplaceAssoc(array $replace, $subject) { 
+    public function strReplaceAssoc(array $replace, $subject = '') { 
         //echo $subject;
-        $identifiers = array('{#'=>'', '#}'=>'');
+        //$identifiers = array('{#'=>'', '#}'=>'');
         $replace = (array) $replace[0]+$identifiers;
-        return str_replace(array_keys($replace), array_values($replace), $subject);    
-     } 
+        foreach ($replace AS $keys => $value)
+        {
+            $subject = str_replace('{#'.$key.'#}', $value, $subject);
+        }
+        return $subject;
+         } 
 
 
      /**
