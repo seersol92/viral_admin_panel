@@ -97,6 +97,12 @@ class Member extends BaseController
         }
 
     }
+
+    public function strReplaceAssoc(array $replace, $subject) { 
+        return str_replace(array_keys($replace), array_values($replace), $subject);    
+     } 
+
+
      /**
      * This function is used to compose email
      */
@@ -117,7 +123,7 @@ class Member extends BaseController
                 $data['memberInfo'] = $result;
                 $keys_list = array_keys($data['memberInfo']);
                 $data['tempList'] = $this->email_model->getTempInfo($_POST['temp_no']);
-                echo str_replace_assoc($tempList[0]->template_content,$data['tempList']); 
+                $this->strReplaceAssoc($tempList[0]->template_content,$data['tempList']); 
                 die;
                 $this->global['pageTitle'] = 'Viral Marketer : Compose Email';
                 $this->loadViews("email/composeEmail", $this->global, $data, NULL);
