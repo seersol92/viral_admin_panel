@@ -24,22 +24,20 @@
                     <h3 class="box-title">Templates List</h3>
                     <div class="box-tools">
                     <form class="form-inline" action="<?php echo base_url() ?>email-management" method="POST" id="searchList">
-                    <div class="form-group">
-                        <select name="temp_type" id="temp_type" class="form-control pull-right" style="width: 180px;" onchange="this.form.submit();">
-                            <option value="" selected="" hidden="">Filter By Email Type</option>
-                            <option value="1">Automated Emails</option>                                            
-                            <option value="2">Follow up Emails</option>
-                            <option value="3">Broadcast Emails</option>
+                        <div class="form-group">
+                        <select name="temp_type" id="temp_type" class="form-control " style="width: 180px;" onchange="this.form.submit();">
+                        <option value="" selected="" hidden="">Filter By Email Type</option>
+                        <option value="1">Automated Emails</option>                                            
+                        <option value="2">Follow up Emails</option>
+                        <option value="3">Broadcast Emails</option>
                         </select>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="searchText" value="<?php //echo $searchText; ?>" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
-                        <div class="input-group-btn">
-                            <button class="btn btn-sm btn-default searchList"><i class="fa fa-search"></i></button>
                         </div>
+                        <div class="form-group">
+                        <input type="text" name="searchText" value="<?php //echo $searchText; ?>" 
+                        class="form-control input-sm " style="width: 150px;" placeholder="Search"/>
+                        </div>
+                    </form>
                     </div>
-                    </form> 
-                </div>
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
                   <table class="table table-hover">
