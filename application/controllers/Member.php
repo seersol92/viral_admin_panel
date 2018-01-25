@@ -99,6 +99,8 @@ class Member extends BaseController
     }
 
     public function strReplaceAssoc(array $replace, $subject) { 
+        echo $subject;
+        $this->dd($replace);
         return str_replace(array_keys($replace), array_values($replace), $subject);    
      } 
 
@@ -123,7 +125,7 @@ class Member extends BaseController
                 $data['memberInfo'] = $result;
                 $keys_list = array_keys($data['memberInfo']);
                 $data['tempList'] = $this->email_model->getTempInfo($_POST['temp_no']);
-                $this->strReplaceAssoc($data['memberInfo'], $data['tempList']->template_content); 
+                $this->strReplaceAssoc($data['memberInfo'], $data['tempList'][0]->template_content); 
                 die;
                 $this->global['pageTitle'] = 'Viral Marketer : Compose Email';
                 $this->loadViews("email/composeEmail", $this->global, $data, NULL);
