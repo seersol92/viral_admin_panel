@@ -10,30 +10,9 @@
         <br>
         <div class="row">
             <div class="col-xs-12 text-right">
-            <form class="form-inline" action="/action_page.php">
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-    </div>
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" name="remember"> Remember me</label>
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
             <div class="form-group">             
                      <a class="btn btn-primary" href="<?php echo base_url(); ?>add-new-template"><i class="fa fa-plus"></i>
                         Add New Template</a>
-                     &nbsp;
-                    <select name="temp_type" id="temp_type" class="form-control pull-right" style="width: 180px;" onchange="this.form.submit();">
-                        <option value="" selected="" hidden="">Filter By Email Type</option>
-                        <option value="1">Automated Emails</option>                                            
-                        <option value="2">Follow up Emails</option>
-                        <option value="3">Broadcast Emails</option>
-                    </select>
                 </div>
            
             </div>
@@ -44,15 +23,23 @@
                 <div class="box-header">
                     <h3 class="box-title">Templates List</h3>
                     <div class="box-tools">
-                        <form action="<?php echo base_url() ?>email-management" method="POST" id="searchList">
-                            <div class="input-group">
-                              <input type="text" name="searchText" value="<?php //echo $searchText; ?>" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
-                              <div class="input-group-btn">
-                                <button class="btn btn-sm btn-default searchList"><i class="fa fa-search"></i></button>
-                              </div>
-                            </div>
-                        </form>
+                    <form class="form-inline" action="<?php echo base_url() ?>email-management" method="POST" id="searchList">
+                    <div class="form-group">
+                        <select name="temp_type" id="temp_type" class="form-control pull-right" style="width: 180px;" onchange="this.form.submit();">
+                            <option value="" selected="" hidden="">Filter By Email Type</option>
+                            <option value="1">Automated Emails</option>                                            
+                            <option value="2">Follow up Emails</option>
+                            <option value="3">Broadcast Emails</option>
+                        </select>
                     </div>
+                    <div class="form-group">
+                        <input type="text" name="searchText" value="<?php //echo $searchText; ?>" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
+                        <div class="input-group-btn">
+                            <button class="btn btn-sm btn-default searchList"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    </form> 
+                </div>
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
                   <table class="table table-hover">
