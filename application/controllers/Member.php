@@ -113,6 +113,7 @@ class Member extends BaseController
             $result = $this->user_model->getMemberInfo($_POST['mem_ibm']);
             if(!empty($result))
             {
+                $this->load->helper('string');
                 $data['memberInfo'] = $result;
                 $keys_list = array_keys($data['memberInfo']);
                 $data['tempList'] = $this->email_model->getTempInfo($_POST['temp_no']);
