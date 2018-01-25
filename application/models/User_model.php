@@ -110,7 +110,7 @@ class User_model extends CI_Model
      */
     function getMemberInfo($memberIbm)
     {
-        $this->db->select('first_name, user_email, ibm');
+        $this->db->select('u_id AS id, first_name, last_name, user_email AS email, date_register, ibm, refer_ibm AS refer_by');
         $this->db->from('members');
         $this->db->where('ibm', $memberIbm);
         $query = $this->db->get();
