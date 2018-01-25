@@ -81,7 +81,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="temp_content">Your Message</label>
-                                        <textarea name="temp_content" style="width: 100%;">
+                                        <textarea name="temp_content" id="email_content" style="width: 100%;">
                                             <?php 
                                         echo $show_content;?></textarea>
                                     </div>
@@ -100,5 +100,7 @@
 </div>
 <script src="<?php echo base_url(); ?>assets/js/nicEdit.js" type="text/javascript"></script>
 <script type="text/javascript">
-	bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+bkLib.onDomLoaded(function() {
+	new nicEditor({fullPanel : true}).panelInstance('email_content');
+});
 </script>
