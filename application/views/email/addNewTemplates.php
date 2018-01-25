@@ -1,9 +1,3 @@
-<script src="<?php echo base_url(); ?>assets/js/nicEdit.js" type="text/javascript"></script>
-<script type="text/javascript">
-bkLib.onDomLoaded(function() {
-	new nicEditor({fullPanel : true}).panelInstance('email_content');
-});
-</script>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -72,8 +66,18 @@ bkLib.onDomLoaded(function() {
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
+                                    <div id="sample">
+                                            <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
+                                            //<![CDATA[
+                                            bkLib.onDomLoaded(function() {
+                                                    new nicEditor({fullPanel : true}).panelInstance('email_content');
+                                                    
+                                            });
+                                            //]]>
+                                            </script>
                                         <label for="temp_content">Template Content</label>
                                         <textarea name="temp_content" id="email_content" style="width: 100%;"></textarea>
+                                    <div>
                                     </div>
                                 </div>
                         </div><!-- /.box-body -->    
