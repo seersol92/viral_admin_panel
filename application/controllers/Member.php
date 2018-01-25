@@ -101,7 +101,7 @@ class Member extends BaseController
     public function strReplaceAssoc(array $replace, $subject) { 
         //echo $subject;
         $replace = (array) $replace[0];
-       // $this->dd($replace[0]);
+        $this->dd($replace);
         return str_replace(array_keys($replace), array_values($replace), $subject);    
      } 
 
