@@ -62,7 +62,7 @@
                                     <div class="form-group">
                                         <label for="temp_name">Member Email</label>
                                         <input type="text" name="mem_email" class="form-control required" 
-                                        value="<?php echo $memberInfo[0]->user_email; ?>" readOnly >
+                                        value="<?php echo $memberInfo[0]->email; ?>" readOnly >
                                     </div>
                                 </div>
                                 <div class="col-md-12">                                

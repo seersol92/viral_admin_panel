@@ -114,8 +114,10 @@ class Member extends BaseController
             if(!empty($result))
             {
                 $data['memberInfo'] = $result;
-                $this->dd($data['memberInfo']);
+                $keys_list = array_keys($data['memberInfo']);
                 $data['tempList'] = $this->email_model->getTempInfo($_POST['temp_no']);
+                echo str_replace_assoc($tempList[0]->template_content,$data['tempList']); 
+                die;
                 $this->global['pageTitle'] = 'Viral Marketer : Compose Email';
                 $this->loadViews("email/composeEmail", $this->global, $data, NULL);
 
