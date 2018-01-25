@@ -24,7 +24,7 @@
                     <div class="box-tools">
                         <form action="<?php echo base_url() ?>email-management" method="POST" id="searchList">
                             <div class="input-group">
-                              <select name="temp_type" id="temp_type" class="form-control pull-right" onchange="this.form.submit();">
+                              <select name="temp_type" id="temp_type" class="form-control pull-right" style="width: 150px;" onchange="this.form.submit();">
                                     <option value="" selected hidden>Filter By Email Type</option>
                                     <option value="1">Automated Emails</option>                                            
                                     <option value="2">Follow up Emails</option>
