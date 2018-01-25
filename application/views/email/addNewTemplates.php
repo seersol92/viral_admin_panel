@@ -79,7 +79,7 @@
                                     <div class="form-group">
                                     <div id="sample">
                                         <label for="temp_content">Template Content</label>
-                                        <textarea name="temp_content" id="email_content" style="width: 100%; height:100px"></textarea>
+                                        <textarea name="temp_content" id="email_content" style="width: 100%; height:150px"></textarea>
                                     <div>
                                     </div>
                                 </div>

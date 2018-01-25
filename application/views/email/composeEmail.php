@@ -81,12 +81,11 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="temp_content">Your Message</label>
-                                        <textarea name="temp_content" id="email_content" style="width: 100%;">
-                                            <?php 
-                                        echo $show_content;?></textarea>
+                                        <textarea name="temp_content" id="email_content" style="width: 100%; height:150px">
+                                            <?php echo $show_content;?>
+                                        </textarea>
                                     </div>
                                 </div>
-                               
                         </div><!-- /.box-body -->    
                         <div class="box-footer pull-right">
                             <input type="submit" class="btn btn-primary" value="Send Now!" />
