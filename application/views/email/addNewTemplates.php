@@ -67,7 +67,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="temp_content">Template Content</label>
-                                        <textarea name="temp_content" id="editor1" rows="10" cols="80"></textarea>
+                                        <textarea name="temp_content" id="email_content" ></textarea>
                                     </div>
                                 </div>
                         </div><!-- /.box-body -->    
@@ -82,17 +82,11 @@
     </section>
     
 </div>
-<script src="<?php echo base_url(); ?>assets/js/ckeditor/ckeditor.js" type="text/javascript"></script>
-<script>
-
-CKEDITOR.editorConfig = function (config) {
-    config.language = 'es';
-    config.uiColor = '#F7B42C';
-    config.height = 300;
-    config.toolbarCanCollapse = true;
-
-};
-CKEDITOR.replace('editor1');
-
+<script src="<?php echo base_url(); ?>assets/js/nicEdit.js" type="text/javascript"></script>
+<script type="text/javascript">
+bkLib.onDomLoaded(function() {
+	new nicEditor({fullPanel : true}).panelInstance('email_content');
+});
 </script>
+
 
