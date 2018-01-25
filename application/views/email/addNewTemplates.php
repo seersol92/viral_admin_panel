@@ -1,3 +1,9 @@
+<script src="<?php echo base_url(); ?>assets/js/nicEdit.js" type="text/javascript"></script>
+<script type="text/javascript">
+bkLib.onDomLoaded(function() {
+	new nicEditor({fullPanel : true}).panelInstance('email_content');
+});
+</script>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -67,7 +73,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="temp_content">Template Content</label>
-                                        <textarea name="temp_content" id="email_content" ></textarea>
+                                        <textarea name="temp_content" id="email_content" style="width: 100%;"></textarea>
                                     </div>
                                 </div>
                         </div><!-- /.box-body -->    
@@ -82,11 +88,6 @@
     </section>
     
 </div>
-<script src="<?php echo base_url(); ?>assets/js/nicEdit.js" type="text/javascript"></script>
-<script type="text/javascript">
-bkLib.onDomLoaded(function() {
-	new nicEditor({fullPanel : true}).panelInstance('email_content');
-});
-</script>
+
 
 
