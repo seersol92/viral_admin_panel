@@ -98,9 +98,12 @@
         </div>    
     </section>    
 </div>
-<script src="<?php echo base_url(); ?>assets/js/nicEdit.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>assets/js/nicEdit.js" type="text/javascript"></script> 
 <script type="text/javascript">
+//<![CDATA[
 bkLib.onDomLoaded(function() {
-	new nicEditor({fullPanel : true}).panelInstance('email_content');
+        new nicEditor({fullPanel : true}).panelInstance('email_content');
+        
 });
+//]]>
 </script>
