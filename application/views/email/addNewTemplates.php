@@ -72,16 +72,14 @@
                                             <option value="1">Automated Emails</option>                                            
                                             <option value="2">Follow up Email</option>
                                             <option value="3">Broadcast Email</option>
-                                            
                                         </select>
-                                        <input type="text" class="form-control required" value="<?php echo set_value('temp_name'); ?>" id="temp_name" name="temp_name" >
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                     <div id="sample">
                                         <label for="temp_content">Template Content</label>
-                                        <textarea name="temp_content" id="email_content" style="width: 100%;"></textarea>
+                                        <textarea name="temp_content" id="email_content" style="width: 100%; height:100px"></textarea>
                                     <div>
                                     </div>
                                 </div>
