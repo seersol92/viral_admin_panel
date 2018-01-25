@@ -64,6 +64,19 @@
                                         <input type="text" class="form-control required" value="<?php echo set_value('temp_name'); ?>" id="temp_name" name="temp_name" >
                                     </div>
                                 </div>
+                                <div class="col-md-12">                                
+                                    <div class="form-group">
+                                        <label for="temp_type">Template Type</label>
+                                        <select name="temp_type" id="temp_type" class="form-control" required>
+                                            <option value="" selected hidden>Select Template Type</option>
+                                            <option value="1">Automated Emails</option>                                            
+                                            <option value="2">Follow up Email</option>
+                                            <option value="3">Broadcast Email</option>
+                                            
+                                        </select>
+                                        <input type="text" class="form-control required" value="<?php echo set_value('temp_name'); ?>" id="temp_name" name="temp_name" >
+                                    </div>
+                                </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                     <div id="sample">
@@ -89,7 +102,6 @@
 //<![CDATA[
 bkLib.onDomLoaded(function() {
         new nicEditor({fullPanel : true}).panelInstance('email_content');
-        
 });
 //]]>
 </script>

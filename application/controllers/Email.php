@@ -68,16 +68,15 @@ class Email extends BaseController {
             else
             {
                 $name = strtolower($this->security->xss_clean($this->input->post('temp_name')));
+                $type = strtolower($this->security->xss_clean($this->input->post('temp_type')));                
                 $content = $this->security->xss_clean($this->input->post('temp_content'));
-                
-                
 				$newTemp = array(
-								   'template_name'=>$name, 
+                                   'template_name'=>$name, 
+								   'template_type'=>$type,                                    
 								   'template_content'=>$content,
 							 	   'created_at'=>date('Y-m-d H:i:s'),
 								   'is_active'=> '1'
 								);
-                
                 $result = $this->email_model->addNewTemp($newTemp);
                 
                 if($result > 0)

@@ -102,8 +102,7 @@
 <script type="text/javascript">
 //<![CDATA[
 bkLib.onDomLoaded(function() {
-        new nicEditor({fullPanel : true}).panelInstance('email_content');
-        
+        new nicEditor({fullPanel : true}).panelInstance('email_content');     
 });
 //]]>
 </script>
