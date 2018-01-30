@@ -14,9 +14,9 @@
                 <div class="form-group">
                 <select name="temp_type" id="temp_type" class="form-control" style="width: 180px;" onchange="this.form.submit();">
                         <option value="" selected hidden>Filter By Email Type</option>
-                        <option value="1">Automated Emails</option>
-                        <option value="2">Follow up Emails</option>
-                        <option value="3">Broadcast Emails</option>
+                        <option value="1" <?php echo ($typeType == 1) ? 'selected' : '' ?>>Automated Emails</option>
+                        <option value="2" <?php echo ($typeType == 2) ? 'selected' : '' ?>>Follow up Emails</option>
+                        <option value="3" <?php echo ($typeType == 3) ? 'selected' : '' ?>>Broadcast Emails</option>
                 </select>
                 </div>
                 <div class="form-group">
@@ -34,7 +34,7 @@
                     <div class="box-tools">
                         <form action="<?php echo base_url() ?>email-management" method="POST" id="searchList">
                             <div class="input-group">
-                              <input type="text" name="searchText" value="<?php //echo $searchText; ?>" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
+                              <input type="text" name="searchText" value="<?php echo $searchText; ?>" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
                               <div class="input-group-btn">
                                 <button class="btn btn-sm btn-default searchList"><i class="fa fa-search"></i></button>
                               </div>

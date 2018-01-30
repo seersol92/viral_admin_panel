@@ -27,6 +27,8 @@ class Email extends BaseController {
 
 			$data['searchText'] = $searchText;
 
+			$data['tempType'] = $tempType;
+
             $this->load->library('pagination');
 
             $count = count($this->email_model->templateListing($searchText, '', '', $tempType));
