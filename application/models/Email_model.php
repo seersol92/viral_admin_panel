@@ -26,8 +26,10 @@ class Email_model extends CI_Model
      * @return array $result : This is result
      */
 
-    public function templateListing($searchText = '', $page='', $segment='')
+    public function templateListing($data = '', $page='', $segment='')
     {
+        $searchText = $data['searchText'];
+        $tempType = $data['temp_type'];
         $this->db->select('BaseTbl.id, BaseTbl.template_name, BaseTbl.template_type, BaseTbl.template_content, BaseTbl.created_at');
         $this->db->from('tbl_email_templates as BaseTbl');
         $this->db->order_by('BaseTbl.id ', 'DESC');

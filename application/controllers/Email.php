@@ -24,17 +24,14 @@ class Email extends BaseController {
         {        
             $searchText = $this->security->xss_clean($this->input->post('searchText'));
             $tempType = $this->security->xss_clean($this->input->post('temp_type'));
-			$this->dd($tempType);
 			$data['searchText'] = $searchText;
-            
+            $data['temp_type'] = $tempType;
             $this->load->library('pagination');
-            
             $count = count($this->email_model->templateListing($searchText, '', ''));
-
 			$returns = $this->paginationCompress ( "email-management/", $count, 10 );
             
 			$data['tempList'] = $this->email_model->templateListing
-							    ($searchText, $returns["page"], $returns["segment"]);
+							    ($data, $returns["page"], $returns["segment"]);
             
 			$this->global['pageTitle'] = 'Viral Marketer : Email Templates';
 
