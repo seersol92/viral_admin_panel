@@ -23,7 +23,8 @@ class Email extends BaseController {
         else
         {        
             $searchText = $this->security->xss_clean($this->input->post('searchText'));
-			
+            $tempType = $this->security->xss_clean($this->input->post('temp_type'));
+			$this->dd($tempType);
 			$data['searchText'] = $searchText;
             
             $this->load->library('pagination');
