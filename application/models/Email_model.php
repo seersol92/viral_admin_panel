@@ -26,16 +26,18 @@ class Email_model extends CI_Model
      * @return array $result : This is result
      */
 
-    public function templateListing($data = '', $page='', $segment='')
+    public function templateListing($searchText = '', $page='', $segment='', $tempType = '')
     {
-        $searchText = $data['searchText'];
-        $tempType = $data['temp_type'];
         $this->db->select('BaseTbl.id, BaseTbl.template_name, BaseTbl.template_type, BaseTbl.template_content, BaseTbl.created_at');
         $this->db->from('tbl_email_templates as BaseTbl');
         $this->db->order_by('BaseTbl.id ', 'DESC');
         if(!empty($searchText)) {
             $likeCriteria = "(BaseTbl.template_name  LIKE '%".$searchText."%'
                             OR  BaseTbl.template_content  LIKE '%".$searchText."%'
+                           )";
+            $this->db->where($likeCriteria);
+        } else if (!empty($tempType)) {
+            $likeCriteria = "(BaseTbl.template_type  LIKE '%".$tempType."%'
                            )";
             $this->db->where($likeCriteria);
         }
@@ -46,7 +48,9 @@ class Email_model extends CI_Model
         $result = $query->result();        
         return $result;
 
-    } 
+    }
+
+
 
     /**
      * This function used to get template information by id

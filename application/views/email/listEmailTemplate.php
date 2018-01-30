@@ -14,9 +14,9 @@
                 <div class="form-group">
                 <select name="temp_type" id="temp_type" class="form-control" style="width: 180px;" onchange="this.form.submit();">
                         <option value="" selected hidden>Filter By Email Type</option>
-                        <option value="automated_emails">Automated Emails</option>
-                        <option value="follow_up_emails">Follow up Emails</option>
-                        <option value="broadcost_email">Broadcast Emails</option>
+                        <option value="1">Automated Emails</option>
+                        <option value="2">Follow up Emails</option>
+                        <option value="3">Broadcast Emails</option>
                 </select>
                 </div>
                 <div class="form-group">
