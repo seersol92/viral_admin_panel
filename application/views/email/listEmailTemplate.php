@@ -14,9 +14,9 @@
                 <div class="form-group">
                 <select name="temp_type" id="temp_type" class="form-control" style="width: 180px;" onchange="this.form.submit();">
                         <option value="" selected hidden>Filter By Email Type</option>
-                        <option value="1" <?php echo ($typeType == 1) ? 'selected' : '' ?>>Automated Emails</option>
-                        <option value="2" <?php echo ($typeType == 2) ? 'selected' : '' ?>>Follow up Emails</option>
-                        <option value="3" <?php echo ($typeType == 3) ? 'selected' : '' ?>>Broadcast Emails</option>
+                        <option value="1" <?php echo ($tempType == 1) ? 'selected' : '' ?>>Automated Emails</option>
+                        <option value="2" <?php echo ($tempType == 2) ? 'selected' : '' ?>>Follow up Emails</option>
+                        <option value="3" <?php echo ($tempType == 3) ? 'selected' : '' ?>>Broadcast Emails</option>
                 </select>
                 </div>
                 <div class="form-group">
