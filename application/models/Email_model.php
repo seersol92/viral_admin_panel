@@ -50,7 +50,13 @@ class Email_model extends CI_Model
 
     }
 
+    function  deleteTemplate($id, $data)
+    {
+        $this->db->where('id', $id);
+        $this->db->update('tbl_email_templates', $data);
 
+        return $this->db->affected_rows();
+    }
 
     /**
      * This function used to get template information by id

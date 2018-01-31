@@ -51,6 +51,24 @@ class Email extends BaseController {
         $this->loadViews("email/addNewTemplates", $this->global, null , NULL);
 	}
 
+	function  deleteTemplate($id)
+    {
+        if(!empty($id))
+        {
+
+            $data = array('is_active'=>0, 'updated_at'=>date('Y-m-d H:i:s'));
+            $result = $this->email_model->deleteTemplate($id, $data);
+            if ($result > 0)
+            {
+                $this->session->set_flashdata('success', 'Template Deleted successfully');
+            }  else
+            {
+                $this->session->set_flashdata('error', 'Something went Wrong.');
+            }
+            redirect('email-management');
+        }
+    }
+
 	function addNewTemplate()
     {
         if($this->isAdmin() == TRUE)

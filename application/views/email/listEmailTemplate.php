@@ -9,6 +9,35 @@
     <section class="content">
         <br>
         <div class="row">
+            <div class="col-md-12">
+                <?php
+                $this->load->helper('form');
+                $error = $this->session->flashdata('error');
+                if($error)
+                {
+                    ?>
+                    <div class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <?php echo $this->session->flashdata('error'); ?>
+                    </div>
+                <?php } ?>
+                <?php
+                $success = $this->session->flashdata('success');
+                if($success)
+                {
+                    ?>
+                    <div class="alert alert-success alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <?php echo $this->session->flashdata('success'); ?>
+                    </div>
+                <?php } ?>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <?php echo validation_errors('<div class="alert alert-danger alert-dismissable">', ' <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>'); ?>
+                    </div>
+                </div>
+            </div>
             <div class="col-xs-12 text-right">
             <form class="form-inline" action="<?php echo base_url() ?>email-management" method="Post">
                 <div class="form-group">
@@ -76,7 +105,7 @@
                       <td><?php echo $list->created_at ?></td>
                       <td class="text-center">
                           <a class="btn btn-sm btn-info" href="<?php echo base_url().'editOld/'.$list->id; ?>" title="Edit"><i class="fa fa-pencil"></i></a> |
-                          <a class="btn btn-sm btn-danger" href="<?= base_url().'send-email/'.$list->id; ?>" title="Delete Template"><i class="fa fa-trash-o"></i></a>                            
+                          <a class="btn btn-sm btn-danger" href="<?= base_url().'delete-template/'.$list->id; ?>" onclick="return confirm('Are you sure you want to delete this Template?');" title="Delete Template"><i class="fa fa-trash-o"></i></a>
                       </td>
                     </tr>
                     <?php
