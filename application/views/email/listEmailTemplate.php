@@ -49,7 +49,7 @@
                       <th>#</th>
                       <th>Template Subject</th> 
                       <th>Template Type</th>
-                        <?php echo ($tempType == 2) ? 'Time Delay' : '' ?>
+                        <?php echo ($tempType == 2) ? '<th>Time Delay</th>' : '' ?>
                       <th>Template Content</th>
                       <th>Added On</th>
                       <th class="text-center">Actions</th>
