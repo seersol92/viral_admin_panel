@@ -80,6 +80,11 @@ class Email extends BaseController {
 							 	   'created_at'=>date('Y-m-d H:i:s'),
 								   'is_active'=> '1'
 								);
+
+                if($type == 2)
+                {
+                    $newTemp['time_delay'] = $this->security->xss_clean($this->input->post('time_delay'));
+                }
                 $result = $this->email_model->addNewTemp($newTemp);
                 
                 if($result > 0)
