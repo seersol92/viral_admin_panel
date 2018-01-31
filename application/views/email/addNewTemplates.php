@@ -77,6 +77,12 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
+                                        <label for="time_delay">Time Delay (In hours)</label>
+                                        <input type="text" class="form-control required" value="<?php echo set_value('time_delay'); ?>" id="time_delay" name="time_delay" >
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
                                     <div id="sample">
                                         <label for="temp_content">Template Content</label>
                                         <textarea name="temp_content" id="email_content" style="width: 100%; height:150px"></textarea>
@@ -97,9 +103,14 @@
 </div>
 <script src="<?php echo base_url(); ?>assets/js/nicEdit.js" type="text/javascript"></script> 
 <script type="text/javascript">
-//<![CDATA[
-bkLib.onDomLoaded(function() {
-        new nicEditor({fullPanel : true}).panelInstance('email_content');
-});
+    jQuery(document).ready(function($){
+        $('#temp_type').on('change', function (e) {
+            alert(this.value());
+        })
+    });
+    //<![CDATA[
+    bkLib.onDomLoaded(function() {
+            new nicEditor({fullPanel : true}).panelInstance('email_content');
+    });
 //]]>
 </script>
