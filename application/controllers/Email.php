@@ -56,7 +56,7 @@ class Email extends BaseController {
         if(!empty($id))
         {
 
-            $data = array('is_active'=>0, 'updated_at'=>date('Y-m-d H:i:s'));
+            $data = array('is_active'=>'0', 'updated_at'=>date('Y-m-d H:i:s'));
             $result = $this->email_model->deleteTemplate($id, $data);
             if ($result > 0)
             {

@@ -40,6 +40,7 @@ class Email_model extends CI_Model
             $likeCriteria = "(BaseTbl.template_type  LIKE '%".$tempType."%'
                            )";
             $this->db->where($likeCriteria);
+            $this->db->where('BaseTbl.is_active', '1');
         }
         //$this->db->where('BaseTbl.isDeleted', 0);
         $this->db->limit($page, $segment);
