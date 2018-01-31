@@ -105,7 +105,7 @@
 <script type="text/javascript">
     jQuery(document).ready(function($){
         $('#temp_type').on('change', function (e) {
-            alert(this.value());
+            alert(this.value);
         })
     });
     //<![CDATA[
