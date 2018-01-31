@@ -48,8 +48,9 @@
                     <tr>
                       <th>#</th>
                       <th>Template Subject</th> 
-                      <th>Template Type</th>                       
-                      <th>Template Content</th>                                                                                                           
+                      <th>Template Type</th>
+                        <?php echo ($tempType == 2) ? 'Time Delay' : '' ?>
+                      <th>Template Content</th>
                       <th>Added On</th>
                       <th class="text-center">Actions</th>
                     </tr>
@@ -69,8 +70,9 @@
                     <tr>
                       <td><?php echo $count; ?></td>
                       <td><?php echo $list->template_name; ?></td> 
-                      <td><?php echo $template_types[$list->template_type]; ?></td>                                                                 
-                      <td><?php echo $list->template_content ?></td>                      
+                      <td><?php echo $template_types[$list->template_type]; ?></td>
+                      <?php echo ($tempType == 2) ? '<td>'.$list->time_delay.'</td>': '' ?>
+                      <td><?php echo $list->template_content ?></td>
                       <td><?php echo $list->created_at ?></td>
                       <td class="text-center">
                           <a class="btn btn-sm btn-info" href="<?php echo base_url().'editOld/'.$list->id; ?>" title="Edit"><i class="fa fa-pencil"></i></a> |
