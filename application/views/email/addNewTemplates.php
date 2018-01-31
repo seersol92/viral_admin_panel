@@ -75,10 +75,10 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-12" style="display: none" id="time_delay_div">
                                     <div class="form-group">
                                         <label for="time_delay">Time Delay (In hours)</label>
-                                        <input type="text" class="form-control required" value="<?php echo set_value('time_delay'); ?>" id="time_delay" name="time_delay" >
+                                        <input type="text" class="form-control" value="<?php echo set_value('time_delay'); ?>" id="time_delay" name="time_delay" >
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -105,7 +105,13 @@
 <script type="text/javascript">
     jQuery(document).ready(function($){
         $('#temp_type').on('change', function (e) {
-            alert(this.value);
+            var selected_type = this.value;
+            if(selected_type == 2) {
+                $('#time_delay_div').show();
+            }else {
+                $('#time_delay_div').hide();
+
+            }
         })
     });
     //<![CDATA[
