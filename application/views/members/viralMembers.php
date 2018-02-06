@@ -51,10 +51,10 @@
                   <table class="table table-hover">
                     <tr>
                       <th>Id</th>
-                      <th>IBM</th>                      
+                      <th>IBM</th>
                       <th>Name</th>
                       <th>Email</th>
-                      <th>Referred By</th>                      
+                      <th>Referred By</th>
                       <th>Registered On</th>
                       <th class="text-center">Actions</th>
                     </tr>

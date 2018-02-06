@@ -72,6 +72,10 @@ $route['memberListing/(:num)'] = "member/memberListing/$1";
 $route['memberListing'] = 'member/memberListing';
 $route['memberListing/(:num)'] = "member/memberListing/$1";
 
+$route['landing-pages'] = "marketing/landingPages";
+$route['add-new-page'] = "marketing/newPages";
+$route['add-landing-page'] = "marketing/addNewPages";
+
 $route['email-management'] = 'email/emailTemplates';
 $route['add-new-template'] = 'email/addTemplate';
 $route['add-template'] = 'email/addNewTemplate';

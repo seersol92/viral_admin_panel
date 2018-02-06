@@ -6,8 +6,8 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
     <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />    
-    <!-- FontAwesome 4.3.0 -->
-    <link href="<?php echo base_url(); ?>assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- FontAwesome v5.0.6 -->
+      <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <!-- Ionicons 2.0.0 -->
     <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
@@ -120,9 +120,15 @@
             ?>
              <li class="treeview">
               <a href="<?php echo base_url(); ?>memberListing">
-                <i class="fa fa-users"></i>
+                  <i class="fa fa-users"></i>
                 <span>Viral Members</span>
               </a>
+            </li>
+            <li class="treeview">
+                <a href="<?php echo base_url(); ?>landing-pages">
+                    <i class="far fa-chart-bar "></i>
+                    <span>Marketing</span>
+                </a>
             </li>
             <li class="treeview">
               <a href="<?php echo base_url(); ?>userListing">
