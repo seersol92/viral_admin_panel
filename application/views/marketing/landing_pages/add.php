@@ -1,3 +1,4 @@
+<link href="<?php echo base_url(); ?>assets/fileupload/jquery.fileuploader.min.css" media="all" rel="stylesheet">
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -62,9 +63,9 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="page_title">Page Title</label>
-                                        <input type="text" class="form-control required"
+                                        <input type="text" class="form-control" required
                                                value="<?php echo set_value('page_title'); ?>"
-                                               id="page_title" name="page_title" >
+                                               id="page_title" name="page_title"  placeholder="Page Title">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -98,14 +99,21 @@
                                         <label for="page_directory">Page Directory (On server)</label>
                                         <input type="text" class="form-control"
                                                value="<?php echo set_value('page_directory'); ?>"
-                                               id="page_directory" name="page_directory" >
+                                               id="page_directory" name="page_directory" placeholder="E.g landing_page1">
                                     </div>
                                 </div>
                                 <div class="col-md-12" >
                                     <div class="form-group">
-                                        <label for="page_design">Page Design Image</label>
+                                        <label for="source_code">Landing Page Source Code(.Zip)</label>
                                         <input type="file" class="form-control"
-                                               id="page_design" name="page_design" >
+                                               id="source_code" name="source_code"  required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12" >
+                                    <div class="form-group">
+                                        <label for="page_design">Landing Page Image</label>
+                                        <input type="file" class="form-control"
+                                               id="page_design" name="landing_page_images"  required>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -118,3 +126,5 @@
         </div>
     </section>
 </div>
+<script src="<?php echo base_url(); ?>assets/fileupload/jquery.fileuploader.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>assets/custom.js" type="text/javascript"></script>

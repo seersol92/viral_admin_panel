@@ -40,7 +40,22 @@ class BaseController extends CI_Controller {
 		die();
 	}
 
-	/**
+    /**
+     * This function used replace spaces
+     */
+
+    public function replace_all($text)
+    {
+        $text = strtolower(htmlentities($text));
+        $text = str_replace(get_html_translation_table() , "_", $text);
+        $text = str_replace(" ", "_", $text);
+        $text = preg_replace("![^a-z0-9]+!i", "_", $text);
+        return trim($text, '_');
+    }
+
+
+
+    /**
 	 * This function used to check the user is logged in or not
 	 */
 	function isLoggedIn() {

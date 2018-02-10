@@ -83,6 +83,19 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
+                                        <label for="temp_type">Select Keywords</label>
+                                        <select id="keywords" class="form-control" >
+                                            <option value="" selected hidden>Select Keywords</option>
+                                            <?php foreach ($keyword AS $key=>$name): ?>
+                                            <option value="<?='{#'.$key.'#}'?>">
+                                                <?=$name?>
+                                            </option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
                                     <div id="sample">
                                         <label for="temp_content">Template Content</label>
                                         <textarea name="temp_content" id="email_content" style="width: 100%; height:150px"></textarea>
@@ -112,6 +125,11 @@
                 $('#time_delay_div').hide();
 
             }
+        })
+
+        $('#keywords').on('change', function (e) {
+            var keywords = this.value;
+            $('.nicEdit-main').append(keywords);
         })
     });
     //<![CDATA[

@@ -7,7 +7,7 @@
     <!-- Bootstrap 3.3.4 -->
     <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />    
     <!-- FontAwesome v5.0.6 -->
-      <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+      <link href="<?php echo base_url(); ?>assets/font-awesome/css/font-awesome.css" rel="stylesheet">
     <!-- Ionicons 2.0.0 -->
     <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
@@ -126,7 +126,7 @@
             </li>
             <li class="treeview">
                 <a href="<?php echo base_url(); ?>landing-pages">
-                    <i class="far fa-chart-bar "></i>
+                    <i class="fa fa-cubes "></i>
                     <span>Marketing</span>
                 </a>
             </li>

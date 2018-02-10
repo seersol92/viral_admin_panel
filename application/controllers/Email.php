@@ -47,8 +47,16 @@ class Email extends BaseController {
 	public function addTemplate ()
 	{
 		$this->global['pageTitle'] = 'Viral Marketer : Add Email Templates';
-        
-        $this->loadViews("email/addNewTemplates", $this->global, null , NULL);
+
+		$data['keyword'] = array(  'id' => 'Id',
+                           'first_name' => 'First Name',
+                           'last_name' => 'Last Name',
+                           'email' => 'Email',
+                           'date_register' => 'Date Register',
+                           'ibm' => 'IBM',
+                           'refer_by' => 'Referral\'s IBM'
+                );
+        $this->loadViews("email/addNewTemplates", $this->global, $data , NULL);
 	}
 
 	function  deleteTemplate($id)
