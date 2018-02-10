@@ -104,7 +104,7 @@ class Marketing extends BaseController {
                         'page_name' => $page_title,
                         'youtube_video' => $youtube_link,
                         'min_level' => $min_level,
-                        'page_path' => $page_directory,
+                        'page_path' => $pagePath,
                         'page_images' => $file_name,
                         'created_at' => date('Y-m-d H:i:s'),
                         'added_by' => $userId,
