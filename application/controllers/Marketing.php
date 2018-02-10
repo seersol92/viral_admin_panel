@@ -12,7 +12,6 @@ class Marketing extends BaseController {
         parent::__construct();
         $this->load->model('marketing_model');
         $this->load->library('upload');
-        $this->load->library('uploader');
         $this->isLoggedIn();
     }
 
