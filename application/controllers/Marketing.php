@@ -60,10 +60,10 @@ class Marketing extends BaseController {
             {
 
                 $pagePath =  $this->replace_all($this->input->post('page_directory'));
-                if (!is_dir('ephron.seersol.com/referral/landing_pages/' . $pagePath))
+                if (!is_dir('landing_pages/' . $pagePath))
                 {
-                    mkdir('ephron.seersol.com/referral/landing_pages/' . $pagePath, 0777, TRUE);
-                    $pagePath = 'ephron.seersol.com/referral/landing_pages/' . $pagePath;
+                    mkdir('landing_pages/' . $pagePath, 0777, TRUE);
+                    $pagePath = 'landing_pages/' . $pagePath;
                 }
                 else
                 {
@@ -87,7 +87,8 @@ class Marketing extends BaseController {
                 } else {
                     echo 'failed';
                 }
-                $imgData = $this->uploadImages('landing_page_images','uploads/landing_pages/');
+                $imgData = $this->uploadImages('landing_page_images',
+                    'landing_pages/images/');
                 if(!empty($data['result']['error']))
                 {
                     $this->session->set_flashdata('error', $data['result']['error']);
