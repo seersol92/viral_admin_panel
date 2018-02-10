@@ -14,13 +14,6 @@ class BaseController extends CI_Controller {
 	protected $roleText = '';
 	protected $global = array ();
 	protected $lastLogin = '';
-
-    private $CI;
-    public function __construct(){
-        $this->CI =& get_instance();
-        $this->CI->load->helper(array('form', 'url'));
-    }
-
     public  function uploadImages($img, $upload_path)
     {
         $config['upload_path'] = $upload_path;
@@ -30,15 +23,15 @@ class BaseController extends CI_Controller {
         $config['max_width'] = '0';
         $config['max_height'] = '0';
         //load upload class library
-        $this->CI->load->library('upload', $config);
-        $this->CI->upload->initialize($config);
-        if (!$this->CI->upload->do_upload($img)){
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+        if (!$this->upload->do_upload($img)){
             // case - failure
-            return $upload_error = array('error' => $this->CI->upload->display_errors());
+            return $upload_error = array('error' => $this->upload->display_errors());
         }
         else{
             // case - success
-            $upload_data = array('success'=> $this->CI->upload->data());
+            $upload_data = array('success'=> $this->upload->data());
 
             return $upload_data;
         }
@@ -47,15 +40,15 @@ class BaseController extends CI_Controller {
     public  function uploadFile($config, $file)
     {
         //load upload class library
-        $this->CI->load->library('upload', $config);
-        $this->CI->upload->initialize($config);
-        if (!$this->CI->upload->do_upload($file)){
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+        if (!$this->upload->do_upload($file)){
             // case - failure
-            return $upload_error = array('error' => $this->CI->upload->display_errors());
+            return $upload_error = array('error' => $this->upload->display_errors());
         }
         else{
             // case - success
-            $upload_data = array('success'=> $this->CI->upload->data());
+            $upload_data = array('success'=> $this->upload->data());
 
             return $upload_data;
         }
