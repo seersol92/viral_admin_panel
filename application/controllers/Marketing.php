@@ -77,7 +77,7 @@ class Marketing extends BaseController {
                         'allowed_types' => 'zip|ZIP',
                         'file_name' => $_FILES['source_code']['name']
                 );
-                $zip_data = $this->uploader->uploadFile($config,'source_code');
+                $zip_data = $this->uploadFile($config,'source_code');
                 $zip = new ZipArchive;
                 $zipFile = $zip_data['success']['full_path'];
                 chmod($zipFile,0777);
@@ -88,7 +88,7 @@ class Marketing extends BaseController {
                 } else {
                     echo 'failed';
                 }
-                $imgData = $this->uploader->uploadImages('landing_page_images','uploads/landing_pages/');
+                $imgData = $this->uploadImages('landing_page_images','uploads/landing_pages/');
                 if(!empty($data['result']['error']))
                 {
                     $this->session->set_flashdata('error', $data['result']['error']);
