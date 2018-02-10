@@ -60,10 +60,10 @@ class Marketing extends BaseController {
             {
 
                 $pagePath =  $this->replace_all($this->input->post('page_directory'));
-                if (!is_dir('uploads/landing_pages/' . $pagePath))
+                if (!is_dir('http://ephron.seersol.com/referral/landing_pages/' . $pagePath))
                 {
-                    mkdir('uploads/landing_pages/' . $pagePath, 0777, TRUE);
-                    $pagePath = 'uploads/landing_pages/' . $pagePath;
+                    mkdir('http://ephron.seersol.com/referral/landing_pages/' . $pagePath, 0777, TRUE);
+                    $pagePath = 'http://ephron.seersol.com/referral/landing_pages/' . $pagePath;
                 }
                 else
                 {
